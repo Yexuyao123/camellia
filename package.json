@@ -1,0 +1,24 @@
+{
+  "name": "camellia",
+  "version": "1.0.0",
+  "author": "",
+  "main": "index.js",
+  "packageManager": "bun@1.1.12",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "turbo": "^2.3.3"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
