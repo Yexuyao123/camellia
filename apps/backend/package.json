@@ -1,0 +1,20 @@
+{
+  "name": "@camellia/backend",
+  "version": "1.0.0",
+  "bun-create": {
+    "start": "bun run src/index.ts"
+  },
+  "scripts": {
+    "prisma:diff": "bunx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/20250114105806_init_0/migration.sql",
+    "prisma:migrate": "bunx prisma migrate dev",
+    "prisma:generate": "bunx prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "prisma": "^6.2.1"
+  },
+  "devDependencies": {},
+  "prisma": {
+    "schema": "lib/prisma/schema.prisma"
+  }
+}

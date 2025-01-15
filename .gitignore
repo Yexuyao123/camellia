@@ -175,3 +175,6 @@ dist
 .DS_Store
 
 .turbo
+
+# prisma generated
+/apps/backend/lib/prisma/generated/
