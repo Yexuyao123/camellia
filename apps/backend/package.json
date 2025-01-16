@@ -5,13 +5,23 @@
     "start": "bun run src/index.ts"
   },
   "scripts": {
-    "prisma:diff": "bunx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/20250114105806_init_0/migration.sql",
+    "dev": "bun run --watch src/index.ts",
+    "prisma:diff": "bunx prisma migrate diff --from-empty --to-schema-datamodel lib/prisma/schema.prisma --script > lib/prisma/migrations/20250114105806_init_0/migration.sql",
     "prisma:migrate": "bunx prisma migrate dev",
-    "prisma:generate": "bunx prisma generate"
+    "prisma:generate": "bunx prisma generate",
+    "prisma:format": "bunx prisma format"
   },
   "dependencies": {
+    "@bogeychan/elysia-logger": "^0.1.7",
+    "@elysiajs/cors": "^1.2.0",
+    "@elysiajs/swagger": "^1.2.0",
     "@prisma/client": "^6.2.1",
-    "prisma": "^6.2.1"
+    "@types/node": "^22.10.6",
+    "elysia": "^1.2.10",
+    "pino-pretty": "^13.0.0",
+    "prisma": "^6.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {},
   "prisma": {
