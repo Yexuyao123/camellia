@@ -9,9 +9,11 @@
     "prisma:diff": "bunx prisma migrate diff --from-empty --to-schema-datamodel lib/prisma/schema.prisma --script > lib/prisma/migrations/20250114105806_init_0/migration.sql",
     "prisma:migrate": "bunx prisma migrate dev",
     "prisma:generate": "bunx prisma generate",
-    "prisma:format": "bunx prisma format"
+    "prisma:format": "bunx prisma format",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@camellia/shared": "workspace:*",
     "@bogeychan/elysia-logger": "^0.1.7",
     "@elysiajs/cors": "^1.2.0",
     "@elysiajs/swagger": "^1.2.0",
