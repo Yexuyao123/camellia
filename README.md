@@ -39,6 +39,8 @@ camellia/
 Make sure you have [Bun](https://bun.sh/docs/installation) installed. Then run the following command in the root directory to install all dependencies:
 
 ```bash
+### for mac next line
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 bun install
 ```
 
