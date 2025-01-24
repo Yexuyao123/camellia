@@ -1,7 +1,8 @@
 import { Elysia, t } from "elysia";
 // import { PrismaClient } from "@prisma/client";
 import { cors } from "@elysiajs/cors";
-import taskRoutes from "@/src/routers/task";
+import planRoutes from "@/routers/plan";
+import webRoutes from "@/routers/web";
 import swagger from "@elysiajs/swagger";
 import { logger } from "@bogeychan/elysia-logger";
 import { GenericError, ValidationError } from "@/lib/errors";
@@ -37,19 +38,23 @@ const app = new Elysia()
           description: "API Documentation",
           version: "1.0.0",
         },
-        tags: [{ name: "Plan", description: "Plan endpoints" }],
+        tags: [
+          { name: "Plan", description: "Plan endpoints" },
+          { name: "Web", description: "Web endpoints" },
+        ],
       },
     })
   )
   .use(cors())
-  .use(taskRoutes)
+  .use(planRoutes)
+  .use(webRoutes)
   .get("/", () => ({ app: "Camellia API" }), {
     response: t.Object({
       app: t.String(),
     }),
     detail: {
       description: "The root endpoint",
-      tags: ["App"],
+      tags: ["App", "Web"],
     },
   })
   .listen(PORT, () => {

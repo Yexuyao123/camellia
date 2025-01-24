@@ -1,20 +1,42 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build": {
+    "prisma:generate": {},
+    "emit-types": {
       "dependsOn": [
-        "^build"
+        "prisma:generate"
       ],
       "outputs": [
         "dist/**"
       ]
     },
+    "@camellia/api#build": {
+      "dependsOn": [
+        "@camellia/backend#prisma:generate",
+        "@camellia/backend#emit-types"
+      ]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
     "typecheck": {
       "dependsOn": [
-        "^typecheck"
+        "prisma:generate",
+        "^typecheck",
+        "^emit-types"
       ]
     },
     "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "@camellia/backend#dev": {
+      "dependsOn": [
+        "prisma:generate",
+        "^emit-types",
+        "^build"
+      ],
       "persistent": true,
       "cache": false
     }

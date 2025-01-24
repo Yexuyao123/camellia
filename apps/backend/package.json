@@ -1,6 +1,18 @@
 {
   "name": "@camellia/backend",
   "version": "1.0.0",
+  "exports": {
+    "./type": {
+      "import": {
+        "types": "./dist/types/index.d.ts"
+      }
+    },
+    "./type/prisma/*": {
+      "import": {
+        "types": "./src/lib/prisma/generated/client/*"
+      }
+    }
+  },
   "bun-create": {
     "start": "bun run src/index.ts"
   },
@@ -10,7 +22,9 @@
     "prisma:migrate": "bunx prisma migrate dev",
     "prisma:generate": "bunx prisma generate",
     "prisma:format": "bunx prisma format",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "emit-types": "tsc --declaration --emitDeclarationOnly",
+    "build": "bun build src/index.ts --target bun"
   },
   "dependencies": {
     "@camellia/shared": "workspace:*",
@@ -26,6 +40,6 @@
   },
   "devDependencies": {},
   "prisma": {
-    "schema": "lib/prisma/schema.prisma"
+    "schema": "src/lib/prisma/schema.prisma"
   }
 }

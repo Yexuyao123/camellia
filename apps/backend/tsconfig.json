@@ -1,16 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
+    "moduleResolution": "Bundler" /* Specify how TypeScript looks up a file from a given module specifier. */,
+    "baseUrl": "./src" /* Specify the base directory to resolve non-relative module names. */,
+    "types": ["bun-types"],
+    "rootDir": "./src",
+    "jsx": "react",
+
+    // emit-type / Bundler mode
+    "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "module": "ESNext" /* ESNext using import, commonjs using require. */,
+    "declaration": true /* Generate type declarations. */,
+    "declarationDir": "./dist/types",
+    "outDir": "./dist/js" /* Output Directory. */,
+    "strict": true /* Enable strict mode. */,
+    "esModuleInterop": true /* Support for ES modules. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "forceConsistentCasingInFileNames": true /* Enforce consistent file names. */,
+
     "paths": {
       "@/*": ["./*"],
+      "@camellia/shared/*": ["../../packages/shared/src/*"]
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

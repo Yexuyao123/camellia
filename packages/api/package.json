@@ -1,0 +1,32 @@
+{
+  "name": "@camellia/api",
+  "type": "module",
+  "exports": {
+    "./plan": {
+      "import": {
+        "default": "./src/plan.ts",
+        "types": "./dist/types/plan.d.ts"
+      }
+    },
+    "./web": {
+      "import": {
+        "default": "./src/web.ts",
+        "types": "./dist/types/web.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "typecheck": "tsc",
+    "build": "tsc",
+    "emit-types": "tsc --declaration --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@elysiajs/eden": "^1.2.0",
+    "@camellia/backend": "workspace:*"
+  }
+}

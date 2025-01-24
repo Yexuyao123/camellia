@@ -5,32 +5,33 @@
     "./utils": {
       "import": {
         "default": "./src/utils.ts",
-        "types": "./types/utils.d.ts"
+        "types": "./dist/types/utils.d.ts"
       }
     },
     "./type-utils": {
       "import": {
         "default": "./src/type-utils.ts",
-        "types": "./types/type-utils.d.ts"
+        "types": "./dist/types/type-utils.d.ts"
       }
     },
     "./helpers": {
       "import": {
         "default": "./src/helpers.ts",
-        "types": "./types/helpers.d.ts"
+        "types": "./dist/types/helpers.d.ts"
       }
     },
     "./constant": {
       "import": {
         "default": "./src/constant.ts",
-        "types": "./types/constant.d.ts"
+        "types": "./dist/types/constant.d.ts"
       }
     }
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
-    "build": "tsc"
+    "build": "tsc",
+    "emit-types": "tsc --declaration --emitDeclarationOnly"
   },
   "devDependencies": {
     "@types/bun": "latest"

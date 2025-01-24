@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Enable latest features
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext"],
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
@@ -9,6 +9,7 @@
     // Bundler mode
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
+    "types": ["bun-types"],
 
     // emit-type / Bundler mode
     "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
@@ -29,6 +30,7 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
   },
+
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

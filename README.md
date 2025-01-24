@@ -49,12 +49,20 @@ bun install
 In the `plan` directory, you can start the development server with the following command:
 ```bash
 bun run dev --filter=@camellia/plan
+# or
+bun dev:plan
 ```
 
 ## Running all Application
 
 ```bash
 bun dev
+```
+
+## Backend been changed
+
+```bath
+bun emit-types
 ```
 
 ## Using the Shared Library

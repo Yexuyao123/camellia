@@ -7,7 +7,12 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "dev:web": "turbo watch dev --filter @camellia/web",
+    "dev:plan": "turbo watch dev --filter @camellia/plan",
+    "dev:backend": "turbo watch dev --filter @camellia/backend",
+    "prisma:generate": "turbo prisma:generate --filter @camellia/backend",
+    "emit-types": "turbo emit-types --filter @camellia/backend"
   },
   "devDependencies": {
     "@types/bun": "latest",
